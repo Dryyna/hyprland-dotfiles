@@ -1,0 +1,6 @@
+vim.cmd [[
+  autocmd VimEnter * hi Normal guibg=NONE ctermbg=NONE
+  autocmd VimEnter * hi NormalFloat guibg=NONE ctermbg=NONE
+]]
+
+
