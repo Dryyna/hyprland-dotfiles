@@ -21,12 +21,12 @@ alias mysize="xrandr | grep '*' | cut -d ' ' -f4"
 alias chistory=": > ~/.zsh_history"
 alias pdf='libreoffice --convert-to pdf'
 alias rwaybar="pkill waybar && waybar &>/dev/null & disown"
-alias pipesh="bash /home/silvertail/Downloads/pipes.sh/pipes.sh"
-alias chyprshot="rm /home/silvertail/Pictures/screenshots/*hyprshot.png"
+alias pipesh="bash $HOME/Downloads/pipes.sh/pipes.sh"
+alias chyprshot="rm $HOME/Pictures/screenshots/*hyprshot.png"
 alias aquarium="asciiquarium"
 alias mktemp="cd '$(mktemp -d)'"
 alias map="mapscii"
-alias history="cat /home/silvertail/.zsh_history"
+alias history="cat $HOME/.zsh_history"
 alias whatport="sudo ss -tulpn"
 #bat
 alias cat='bat'
@@ -43,7 +43,7 @@ alias ls='lsd --group-dirs=first'
 
 
 #-------------------------- HISTORY ------------------------
-HISTFILE=/home/silvertail/.zsh_history
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt histignorealldups sharehistory
