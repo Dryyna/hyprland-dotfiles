@@ -14,6 +14,7 @@
 - Terminal: Kitty
 - Fetch: Fastfetch
 ## NVChat config (personal)
+![foto](nv-chat/screenshot3.png)
 - For no autocomplete:
 in ~/.confg/nvim/lua/plugins/init.lua add init.lua
 - For transparecy:
