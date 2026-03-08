@@ -28,6 +28,7 @@ in ~/.config/nvim/init.lua add neovim_transparent.txt
 - The default P10k instant prompt snippet is commented out to prevent startup warnings or rendering issues.
 - The `.zshrc` is configured to send ponysay errors to /dev/null
 ### Fastfetch
+![foto](fastfetch/screenshot2.png)
 - Fastfetch is configured with custom styling and personal aesthetic preferences.
 - Image rendering is enabled using kitty image protocol.
 - Custom logo images are stored inside the fastfetch profile directory.
