@@ -29,21 +29,21 @@ in ~/.config/nvim/init.lua add neovim_transparent.txt
 - The `.zshrc` is configured to send ponysay errors to /dev/null
 ## Fastfetch
 ![foto](fastfetch/screenshot2.png)
-- ´fastfetch´ is configured with custom styling and personal aesthetic preferences.
-- Image rendering is enabled using ´kitty´ image protocol.
-- Custom logo images are stored inside the fastfetch ´profile directory´.
+- `fastfetch` is configured with custom styling and personal aesthetic preferences.
+- Image rendering is enabled using `kitty` image protocol.
+- Custom logo images are stored inside the fastfetch `profile directory`.
 ## Cool terminal apps:
-- Ponysay
-- Cowsay
-- Btop
-- Cava
-- Cmatrix
-- Lolcat
-- Pipesh
-- Nyancat
-- Oneko
-- Peaclock
-- aalib
-- asciiquarium
-- sl
-- mapscii
+
+* **Ponysay** — `sudo pacman -S ponysay`
+* **Cowsay** — `sudo pacman -S cowsay`
+* **Btop** — `sudo pacman -S btop`
+* **Cava** — `sudo pacman -S cava`
+* **Cmatrix** — `sudo pacman -S cmatrix`
+* **Lolcat** — `sudo pacman -S lolcat`
+* **Pipes.sh** — `yay -S pipes.sh`
+* **Nyancat** — `sudo pacman -S nyancat`
+* **Peaclock** — `yay -S peaclock`
+* **AAlib** — `sudo pacman -S aalib`
+* **Asciiquarium** — `sudo pacman -S asciiquarium`
+* **sl** — `sudo pacman -S sl`
+* **mapscii** — `npm install -g mapscii`
