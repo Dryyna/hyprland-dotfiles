@@ -33,7 +33,7 @@ in ~/.config/nvim/init.lua add neovim_transparent.txt
 - Image rendering is enabled using `kitty` image protocol.
 - Custom logo images are stored inside the fastfetch `profile directory`.
 ## Cool terminal apps:
-
+![foto](screenshot4.png)
 * **Ponysay** — `sudo pacman -S ponysay`
 * **Cowsay** — `sudo pacman -S cowsay`
 * **Btop** — `sudo pacman -S btop`
