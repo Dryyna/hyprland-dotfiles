@@ -1,4 +1,5 @@
 # arch_linux_dotfiles
+![foto](screenshot.png)
 ## Stack && Dependencies
 - WM: Hyprland
 - Wallpaper: swww
