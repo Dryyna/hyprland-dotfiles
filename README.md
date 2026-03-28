@@ -6,7 +6,7 @@
 - Lock: Hyprlock
 - Screenshots: Hyprshot
 - Bar: Waybar
-- Launch: Wofi
+- Launch: Rofi
 - Notifications: SwayNC
 - Fonts: Nerd Font
 - Themes: Papirus
