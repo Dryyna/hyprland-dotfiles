@@ -131,6 +131,34 @@ function myip(){
   echo "${yellowColour}[+]${endColour} Copiando la IP por ${purpleColour}wlan0${endColour} ${redColour}$privateip${endColour}"
   ip a | grep wlan0 |grep -oP "\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}" | head -n1 | wl-copy
 }
+
+function openw() {
+  local window="$1"
+  local file="$2"
+  
+  if [[ -z "$window" || -z "$file" ]]; then
+    echo -e "\t${redColour}[!] Uso: openw <ventana/app> || <archivo>, perra >:c${endColour}"
+    return 1
+  fi
+
+  echo -e "${yellowColour}[+]${endColour} Abriendo la mierda esta..."
+
+  if [[ $2 ]]; then
+    "$window" "$file" &>/dev/null & disown
+  else
+    "$window" &>/dev/null & disown
+  fi
+}
+
+function cdocker(){
+  echo -e "\t${greenColour}[!]${endColour} Deleting ${purpleColour}docker${endColour} containers..."
+  docker rm $(docker ps -a -q) --force 2>/dev/null
+  docker rmi $(docker images -a -q) --force 2>/dev/null
+  docker volume rm $(docker volume ls -q) 2>/dev/null
+  docker network rm $(docker network ls -q ) 2>/dev/null
+  echo -e "${yellowColour}[+]${endColour} Docker cleaned ${purpleColour}>:c${endColour}"
+}
+
 # -------------------------------------------------------------
 
 
@@ -177,3 +205,9 @@ bindkey '^[[3~' delete-char
 # ---------------------------------------------------------
 
 fastfetch 2>/dev/null
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<
