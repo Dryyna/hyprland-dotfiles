@@ -1,0 +1,270 @@
+/* ================================================= */
+/* Waybar Minimal Pill Style Bar                     */
+/* made by shivam (github.com/shivam-salkar)         */
+/* ================================================= */
+
+* {
+    font-family: "Hack Nerd Font Mono", "JetbrainsMono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    transition: background-color .3s ease-out;
+}
+
+/* Main Waybar window (transparent, pills handle bg) */
+window#waybar {
+    background: transparent;
+    color: #e6e8ee; /* main foreground text */
+    font-family:
+        "Hack Nerd Font Mono",
+        "SpaceMono Nerd Font",
+        feather;
+    transition: background-color .5s;
+}
+
+/* Containers for left / center / right modules */
+.modules-left,
+.modules-right {
+    background: #1e2a40; /* lighter navy pill background */
+    padding: 0 5px;
+    border-radius: 8px;
+}
+
+.modules-center {
+    background: #0b1220; /* keep center dark as requested (window titles) */
+    margin: 5px 10px;
+    padding: 0 10px;
+    border-radius: 8px;
+    font-size: 19px; /* slightly larger so the window icons look good and not tiny */
+}
+
+.modules-left {
+    background: #1e2a40; /* same as right module, as requested */
+    padding: 4px 6px; /* internal padding so inner content (workspaces) can have margins and sit inset like the right side */
+    margin: 5px 5px;
+}
+
+.modules-right {
+    padding: 4px 8px;
+    margin: 5px 10px; /* keep original for right */
+}
+
+/* Shared styling for most modules */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#language,
+#mpd {
+    padding: 0 10px;
+    border-radius: 8px;
+}
+
+/* Hover effect for modules */
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#wireplumber:hover,
+#custom-media:hover,
+#tray:hover,
+#mode:hover,
+#idle_inhibitor:hover,
+#scratchpad:hover,
+#power-profiles-daemon:hover,
+#language:hover,
+#mpd:hover {
+    background: #2a374f; /* slightly lighter on hover for the new lighter pills */
+}
+
+/* Workspace buttons */
+#workspaces button {
+    background: transparent;
+    font-family:
+        SpaceMono Nerd Font,
+        feather;
+    font-weight: 900;
+    font-size: 13pt;
+    color: #61afef; /* inactive workspace text */
+    border: none;
+    border-radius: 8px;
+}
+
+/* Active workspace pill */
+#workspaces button.active {
+    background: #c9c6ff; /* light lavender */
+    color: #0b1220;      /* dark text for contrast */
+}
+
+/* Hovered workspace */
+#workspaces button:hover {
+    background: #c9c6ff;
+    color: #0b1220;
+    box-shadow: none;
+}
+
+/* Arch logo module */
+#custom-arch {
+    margin-left: 5px;
+    padding: 0 10px;
+    font-size: 25px;
+    transition: color .5s;
+}
+
+#custom-arch:hover {
+    color: #61afef; /* blue accent on hover */
+}
+
+/* ===================== */
+/* Extra modules         */
+/* ===================== */
+
+/* Bluetooth indicator */
+#bluetooth {
+    padding: 0 10px;
+    border-radius: 8px;
+}
+
+#bluetooth:hover {
+    background: #2a374f;
+}
+
+/* System monitor icon */
+#custom-sysmon {
+    font-size: 28px;
+    padding: 0 10px;
+    border-radius: 8px;
+}
+
+#custom-sysmon:hover {
+    background: #2a374f;
+}
+
+/* Power button - rule moved to the end of the file for higher priority so it loads correctly */
+
+/* ===================================================== */
+/* Individual backgrounds for right modules (lighter colors) */
+/* Network, volume, clock, bluetooth, sysmon (cpu info) have */
+/* their own colors. Battery is back to container color.     */
+/* Center module untouched.                                 */
+/* ===================================================== */
+
+/* Make the colored modules smaller and inset inside the bar
+   so the dark container background shows around them.
+   This makes them look like separate "buttons" (botones). */
+#network,
+#pulseaudio,
+#clock,
+#bluetooth,
+#custom-sysmon,
+#custom-power,
+#battery {
+    margin: 2px 3px;   /* space around so container bg frames them */
+    color: #000000;    /* black text for these right modules (light pastel bgs) */
+}
+
+/* Left side inner modules - same margins as right so workspaces and arch sit inset
+   and aligned the same way inside the left container */
+#workspaces,
+#custom-arch {
+    margin: 2px 3px;
+}
+
+#network {
+    background: #CDC1FF; /* soft blue for wifi */
+}
+
+#network:hover {
+    background: #CDC1FF;
+}
+
+#pulseaudio {
+    background: #e89a5a; /* warm orange for volume */
+}
+
+#pulseaudio:hover {
+    background: #d07a3a;
+}
+
+#clock {
+    background: #9a8ad9; /* soft periwinkle for clock (hora + fecha) */
+    color: #000000; /* black text for better contrast on light bg */
+}
+
+#clock:hover {
+    background: #7a6ab9;
+}
+
+#bluetooth {
+    background: #BFECFF; /* light cyan for bluetooth */
+}
+
+#bluetooth:hover {
+    background: #BFECFF;
+}
+
+#custom-sysmon {
+    background: #FFF6E3; /* light green for sysmon / cpu info */
+}
+
+#custom-sysmon:hover {
+    background: #FFF6E3;
+}
+
+/* Battery module - now with its own pastel background like the other right side buttons.
+   Uses Waybar's .warning and .critical classes for low battery states. */
+#battery {
+    background: #a5d6a7; /* pastel green (normal) */
+    color: #1e2a40; /* dark text for readability on light pastel */
+}
+
+#battery.warning {
+    background: #fa5d6a; /* lighter pastel yellow when battery is getting low */
+    color: #1e2a40;
+}
+
+#battery.critical {
+    background: #ef9a9a; /* soft light red when almost empty */
+    color: #000000; 
+}
+
+/* Hover for battery to keep readable text when using generic dark hover bg */
+#battery:hover {
+    color: #1e2a40; /* keep dark on hover for the pastel bg */
+}
+
+/* Power button - specific for right side, placed last so it takes priority */
+.modules-right #custom-power {
+    padding: 0 12px;
+    border-radius: 8px;
+    font-size: 17px;
+    background: #FE81D4; /* dark red background for power button */
+    color: #000000; /* soft red icon */
+}
+
+.modules-right #custom-power:hover {
+    background: #7a3a3a; /* slightly brighter red on hover */
+    color: #61afef;
+}
+
+/* Para cambiar el color de fondo de TODO el módulo de la derecha (el contenedor),
+   cambia el valor de background abajo. Se carga al final para tener prioridad. */
+.modules-right {
+    background: #1e2a40; /* cambia este color para el fondo completo de la derecha */
+}
+

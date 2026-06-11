@@ -1,0 +1,127 @@
+{
+    "custom/arch": {
+        "format": "󰣇",
+        "tooltip": true,
+        "tooltip-format": "Made with 𖹭 \n ~shivam"
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "hyprland/window": {
+        "format": "{title} - {class}",
+        "max-length": 65,
+        "rewrite": {
+            "": " Arch  Hyprland ",
+            " - ": " Arch  Hyprland ",
+            "(.*nvim)...(.*)": "  nvchad - $2 ",
+            "(.*code) - (.*)": " 󰨞  $1 ",
+            "^.*btop( .*|$)": " 󰧨 BTOP $1",
+            "^.*cmatrix( .*|$)": " 󰘨 MATRIX $1 ",
+            "^.*grok( .*|$)": " 🛸 Grok $1",
+            "^.*Windows( .*|$)": " 󰖳 Vmware - Bindoj ",
+            "^.*windows( .*|$)": " 󰖳 Vmware - Bindoj ",
+            "^.*libreoffice( .*|$)": " 🦉 $1 ",
+            "^.*Libreoffice( .*|$)": " 🦉 $1 ",
+            "^.*aquarium( .*|$)": " 🪼 aquarium $1",
+            "^.*sudo su( .*|$)": " 🐦‍🔥 root $1",
+            "^.*su -( .*|$)": " 🐦‍🔥 root $1",
+            "(.*) - Spotify": "  $1 ",
+            "(.*) - com.mitchellh.ghostty": " 󰊠 $1 ",
+            "(.*Steam)...(.*)": "   $1 ",
+            "(.*imv)...(.*).. (.*)": "   $2",
+            "(.*) - floorp": " 🦊  $1 ",
+            "(.*) - Brave-browser": " 🦁  $1 ",
+            "(.*) - librewolf": " 🐺  $1 ",
+            "(.*) - blueman-manager": " 🐦 $1 ",
+            "(.*) - Mullvad Browser": " 🦔  $1 ",
+            "(.*) - Mullvad VPN": " 🦔  $1 ",
+            "(.*) - Tor Browser": " 🧄  $1 ",
+            "(.*) - kitty": " 🦇 $1 ",
+            "(.*) - Vmware": " 🖳  $1 ",
+            "(.*) - Bitwarden": " 🔐 $1 ",
+            "(.*) - org.kde.dolphin": " 🐬  $1 ",
+            "(.*) - install4j-burp-StartBurp": " 🐦‍🔥  $1 ",
+            "(.*) - org.wireshark.Wireshark": " 🦈  $1 ",
+            "(.*) - ": " Arch  Hyprland "
+        }
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "max-volume": 150,
+        "scroll-step": 5,
+        "format-muted": "🔇",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+
+    "bluetooth": {
+        "format": "󰂯",
+        "tooltip": true,
+        "tooltip-format": "{status}",
+        "on-click": "rofi-bluetooth"
+    },
+
+    "network": {
+        "format-wifi": "󰖩 {essid}" ,
+        "tooltip": true,
+        "tooltip-format": "SSID: {essid}\nSignal: {signalStrength}%\nSpeed: {bandwidthDownBits} ↓ / {bandwidthUpBits} ↑",
+        "format-ethernet": "󰀂 ",
+        "format-disconnected": "󰖪 ",
+        "interval": 2,
+        "on-click": "networkmanager_dmenu"
+    },
+
+    "custom/sysmon": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "{}",
+        "exec": "~/.config/waybar/scripts/sysmon.sh",
+        "interval": 2
+    },
+
+
+
+    "cpu": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["󰁺","󰁻","󰁼", "󰁽","󰁾", "󰁿", "󰁿", "󰂀","󰂂", "󰂄"],
+        
+
+        "on-click": "~/.config/waybar/scripts/power-profiles.sh"
+    },
+
+    "clock": {
+        "format": "󰔟 {:%I:%M %p |  %e %B}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/powermenu.sh"
+    }
+}
